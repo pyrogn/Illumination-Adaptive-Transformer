@@ -1,3 +1,4 @@
+import base64
 import io
 import os
 import torch
@@ -79,14 +80,16 @@ class IATHandler(BaseHandler):
 
     def postprocess(self, inference_output):
         """
-        Postprocessing involves converting the model output tensors to images.
+        Postprocessing involves converting the model output tensors to base64-encoded strings.
         :param inference_output: Inference output.
         :return: Postprocessed inference output.
         """
-        # Convert the output tensor to images
-        output_images = []
+        output_data = []
         for tensor in inference_output:
             image = transforms.ToPILImage()(tensor.cpu().squeeze(0))
-            output_images.append(image)
+            buffered = io.BytesIO()
+            image.save(buffered, format="JPEG")
+            base64_img = base64.b64encode(buffered.getvalue()).decode("utf-8")
+            output_data.append(base64_img)
 
-        return output_images
+        return output_data
