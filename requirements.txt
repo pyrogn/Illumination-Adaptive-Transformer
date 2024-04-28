@@ -1,7 +1,6 @@
 pytorch 
-pytorch=1.7.1 
 torchvision 
-cudatoolkit=11.0
+cudatoolkit
 timm 
 matplotlib 
 IQA_pytorch 
