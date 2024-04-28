@@ -1,4 +1,4 @@
-from IAT_enhance.model.IAT_only import Local_pred_S
+from IAT_enhance.model.IAT_main import Local_pred_S
 from IAT_enhance.model.global_net import Global_pred
 from IAT_enhance.model.IAT import IAT
 import torch
