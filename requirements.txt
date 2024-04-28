@@ -1,6 +1,6 @@
 torch 
 torchvision 
-cudatoolkit
+# cudatoolkit # install some other way
 timm 
 matplotlib 
 IQA_pytorch 
