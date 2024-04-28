@@ -1,7 +1,4 @@
-from IAT_enhance.model.IAT import IAT
-import torch
 from torch import nn
-import os
 import math
 
 from timm.models.layers import trunc_normal_
@@ -110,9 +107,9 @@ class Local_pred_S(nn.Module):
         return mul, add
 
 
-if __name__ == "__main__":
-    os.environ["CUDA_VISIBLE_DEVICES"] = "3"
-    img = torch.Tensor(1, 3, 400, 600)
-    net = IAT()
-    print("total parameters:", sum(param.numel() for param in net.parameters()))
-    _, _, high = net(img)
+# if __name__ == "__main__":
+#     os.environ["CUDA_VISIBLE_DEVICES"] = "3"
+#     img = torch.Tensor(1, 3, 400, 600)
+#     net = IAT()
+#     print("total parameters:", sum(param.numel() for param in net.parameters()))
+#     _, _, high = net(img)
