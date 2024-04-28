@@ -2,7 +2,7 @@ from torch import nn
 import math
 
 from timm.models.layers import trunc_normal_
-from model.blocks import CBlock_ln, SwinTransformerBlock
+from IAT_enhance.model.blocks import CBlock_ln, SwinTransformerBlock
 
 
 class Local_pred(nn.Module):
